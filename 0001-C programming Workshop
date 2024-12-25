@@ -163,3 +163,366 @@ else
 printf(“Not”);
 return 0;
 }
+
+// 10. WAP to input any two numbers and find the L.C.M & H.C.F .
+
+#include<stdio.h>
+int main(){
+int num1, num2, l , h , i;
+printf(“Enter two number : “);
+scanf(“%d%d”, &num1, &num2);
+for(i=num1 ; i>=1; i- -)
+{
+if(num1 % i ==0 && num2 % i==0)
+  {
+h = i;
+break;
+  }
+}
+l = (num1*num2)/h;
+printf(“H.C.F is %d\n”, h);
+printf(“L.C.M is %d\n”, l);
+return 0;
+}
+
+// 11. WAP to find the greatest among three numbers using function.
+
+#include<stdio.h>
+
+int main(){
+int a , b, c ;
+printf(“Enter three integer : “);
+scanf(“%d%d%d”,&a, &b, &c);
+int max = a;
+if(b > max){
+max = b;
+}
+if(c > max){
+max = c;
+}
+printf(“Greatest no: %d”, max);
+return 0;
+}
+
+OR,
+
+#include<stdio.h>
+int main(){
+int a, b, c;
+printf(“Enter three integer: “);
+scanf(“%d%d%d”, &a , &b, &c);
+if(a>b && a>c)
+printf(“Greatest no. is %d\n”, a);
+else if(b>a && b>c)
+printf(“Grestest no. is %d\n”, b);
+else if(c>a && c>b)
+printf(“Grestest no. is %d\n”, c);
+else
+printf(“All are equal”);
+return 0;
+}
+
+// 12. WAP to define a function whether the number is prime or composite.
+
+#include<stdio.h>
+int check(int num){
+int i , c=0;
+for(i=1;i<=num;i++)
+ {
+if(num % i == 0)
+c++;
+ }
+return c==2;
+}
+int main(){
+int num;
+printf(“Enter number : “);
+scanf(“%d” , &num);
+int find = check(num);
+if(find)
+printf(“Prime”);
+else
+printf(“Composite”);
+return 0;
+}
+
+// 13. WAP using structure to input 10 student’s roll , name , age and address & display it in appropriate format.
+
+#include<stdio.h>
+struct student{
+int roll , age;
+char nam[30] , add[25];
+} n[10];
+int main(){
+int i;
+// Input operation
+printf(“Enter 10 different student’s roll , name , age and address : \n”);
+for(i=0; i<10;i++)
+  {
+printf(“Student’s no. : %d\n”,i+1);
+printf(“Student’s roll : “);
+scanf(“%d”, &n[i].roll);
+printf(“Student’s name : “);
+scanf(“%s” , n[i].nam);
+printf(“Student’s age : “);
+scanf(“%d”, &n[i].age);
+printf(“Student’s address : “);
+scanf(“%d”, &n[i].add);
+  }
+// Now time to display contents
+for(i=0;i<10;i++)
+{
+printf(“Student no. : “);
+printf(“Student’s roll : %d\n”, n[i].roll);
+printf(“Student’s name : %d\n” , n[i].nam);
+printf(“Student’s age : %d\n” , n[i].age);
+printf(“Student’s address : %d\n”, n[i].add);
+}
+return 0;
+}
+
+// 14. WAP using user-defined function to calculate the y raise to power x.
+
+#include<stdio.h>
+#include<math.h> 
+int main(){
+int x , y ;
+printf(“Enter base number : \n”);
+scanf(“%d”, &y);
+printf(“Enter exponent number : \n”);
+scanf(“%d”, &x);
+int power = pow(y , x);
+printf(“The result is %d”,power);
+return 0;
+}
+
+/* 15. Write a program to read N students record store them in data file and display the content in 
+appropriate format by using fprintf and fscanf function.  */
+
+#include<stdio.h>
+
+int main(){
+int num , i , roll ,age;
+char nam[30];
+FILE *fptr;
+fptr = fopen(“student.txt”, “w”);
+printf(“How many student’s detail ? \n”);
+scanf(“%d”,&num);
+printf(“Enter %d student’s roll , name & age : \n”,num);
+for(i=0;i<num;i++){
+printf(“Student no: %d\n”,i+1);
+printf(“Student’s roll: “);
+scanf(“%d”,&roll);
+printf(“Student’s name : “);
+scanf(“%s”,nam);
+printf(“Student’s age : “);
+scanf(“%d”,&age);
+printf(“\n”);
+fprintf(fptr , “%d%s%d”,roll, nam, age);
+}
+fclose(fptr);
+//Displaying detail
+FILE *fp;
+fp = fopen(“student.txt”,”r”);
+while(fscanf(fp,”%d%s%d”,&roll, &nam, &age)!=EOF){
+printf(“Student no: “);
+printf(“Student’s roll: %d\n”,roll);
+printf(“Student’s name :%s\n”,nam);
+printf(“Student’s age : %d\n”,age);
+}
+fclose(fp);
+return 0;
+}
+
+/* 16.  A datafile named “student.txt” contain name , class and marks 
+obtained in three different subject of few students. Write a C program to addmore records until
+user press ‘y’ as per user requirement.   */
+
+#include<stdio.h>
+
+#include<string.h>
+int main(){
+int mark1, mark2, mark3 ,class;
+char nam[30],ch[5];
+FILE *fptr;
+fptr = fopen(“student.txt”, “a”);
+printf(“Add more  records ! \n”);
+do{
+printf(“Enter the name: \n”);
+scanf(“%s”,&nam);
+printf(“Enter class : \n”);
+scanf(“%d”,&class);
+printf(“Enter marks obtained in three sub: \n”);
+scanf(“%d%d%d”,&mark1,&mark2,&mark3);
+fprintf(fptr, “%s\t%d\t%d\t%d\t%d\n”,nam,class,mark1,mark2,mark3);
+printf(“Do you want to add more Press ‘Y’ to continue !”);
+scanf(“%s”,ch);
+}while(strcmp(ch,”Y”)==0 || strcmp(ch,”y”)==0);
+fclose(fptr);
+return 0;
+}
+
+/* 17. WAP to enter roll , name , and age of “n” number of students and display
+it based on age using structure.  */
+
+#include<stdio.h>
+#include<string.h>
+struct students{
+int roll, age;
+char nam[20];
+}n[999];
+int main(){
+int troll, tage, i , j;
+char tnam[20];
+int limit;
+printf("How many student's detail do you want to store ? \n");
+scanf("%d",&limit);
+if(limit >= 999)
+ {
+  printf("MAXIMUM LIMIT REACHED !, ERROR !");
+  return 0;
+ }
+printf("Enter %d student's roll, name and age: \n",limit);
+for( i = 1; i<=limit; i++)
+{
+printf("Student no:%d\n", i);
+printf("Student's roll: ");
+scanf("%d", &n[i].age);
+printf("Student's name: ");
+scanf("%s", &n[i].nam);
+printf("Student's age: ");
+scanf("%d",&n[i].age);
+printf("\n");
+}
+
+// Now performing the swaping operations
+for( i=1;i<=limit;i++)
+{
+ for(j=i+1;j<=limit;j++)
+  {
+   if(n[i].age > n[j].age)
+    {
+     // swaping roll value
+      troll = n[i].roll;
+      n[i].roll = n[j].roll;
+      n[j].roll = troll;
+     // swaping the name value
+     strcpy(tnam, n[i].nam);
+     strcpy(n[i].nam, n[j].nam);
+     strcpy(n[j].nam, tnam);
+    //swaping the age value
+    tage = n[i].age;
+    n[i].age = n[j].age;
+    n[j].age = tage;
+   }
+ }
+}
+// Now, displaying the output
+
+for(i = 1; i<=limit;i++)
+{
+printf("Student no:%d\n",i);
+printf("Student's roll:%d\n",n[i].roll);
+printf("Student's name:%s\n",n[i].nam);
+printf("Student's age:%d\n", n[i].age);
+printf("\n");
+}
+return 0;
+}
+
+// 18. WAP to read 2X2 matrix element and display it.
+
+#include<stdio.h>
+int main(){
+int i , j , a[2][2];
+printf(“Enter 2X2 matrix elements: “);
+for(i=1 ;i<=2 ;i++)
+ {
+   for(j=1 ;j<=2 ;j++)
+    {
+    scanf(“%d”, &a[i][j]);
+    }
+ }
+for(i=1 ;i<=2 ;i++)
+{
+    for(j=1 ;j<=2 ;j++)
+    {
+    printf(“%d\t” , a[i][j]);
+    }
+    printf(“\n”);
+}
+return 0;
+}
+
+// 19. WAP to read two 2X2 matrix elements then also find it’s Sum.
+
+#include<stdio.h>
+int main(){
+int i , j , a[2][2] , b[2][2] , s[2][2];
+printf(“Enter first 2X2 matrix elements: \n”);
+for(i=0 ; i<2; i++)
+ {
+  for(j=0; j<2; j++)
+   {
+   scanf(“%d” , &a[i][j]);
+   }
+ }
+printf(“Enter second 2X2 matrix elements: \n”);
+for(i=0; i<2; i++)
+ {
+  for(j=0; j<2; j++)
+  {
+  scanf(“%d” , &b[i][j]);
+  }
+ }
+for(i=0; i<2; i++)
+ {
+ for(j=0; j<2; j++)
+  {
+  s[i][j] = a[i][j] + b[i][j];
+  }
+}
+for(i=0; i<2; i++)
+ {
+  for(j=0; j<2; j++)
+   {
+   printf(“%d” , &s[i][j]);
+   }
+  printf(“\n”);
+ }
+return 0;
+}
+
+/*  20. WAP to store ‘n’ student’s name and marks obtained in 3 subjects & store it in datafile named
+“student.txt” of only those students who are passed.[Pass mark : >=34]  */
+
+#include<stdio.h>
+
+int main(){
+    int sub1 , sub2 , sub3 , i , limit;
+    char nam[30];
+    FILE *fptr;
+    fptr = fopen(“student.txt” , “w”);
+    printf(“How many students detail: \n”);
+    scanf(“%d”,&limit);
+    printf(“Enter %d student’s name & marks obtained in english, nepali & math : \n”,limit);
+    for(i=0 ; i<limit ; i++)
+
+    {
+
+        printf(“Student no.:%d\n”,i+1);
+        printf(“Student’s name: “);
+        scanf(“%s”,&nam);
+        printf(“Marks obtained in english , nepali , & math : “);
+        scanf(“%d%d%d”,&sub1, &sub2, &sub3);
+        int tot = sub1 + sub2 + sub3;
+        if(tot > 34)
+        {
+            fprintf(fptr , “%s\t%d\t%d\t%d\n”,nam,sub1,sub2,sub3);
+        }
+    }
+    fclose(fptr);
+    return 0;
+}
+
+
