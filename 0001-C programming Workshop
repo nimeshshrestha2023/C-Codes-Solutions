@@ -525,4 +525,32 @@ int main(){
     return 0;
 }
 
+// 20. WAP in C to input any two numbers and find the LCM and HCF.
+
+#include<stdio.h>
+int main() {
+    int num1, num2, lcm, hcf;
+    // Taking input from the user
+    printf("Enter first number: \n");
+    scanf("%d", &num1);
+    printf("Enter second number: \n");
+    scanf("%d", &num2);
+    // Finding HCF using a loop
+    for (int i = num1; i >= 1; i--) {
+        if (num1 % i == 0 && num2 % i == 0) {
+            hcf = i;
+            break;
+        }
+    }
+    // Calculating LCM using the relation between HCF and LCM
+    lcm = (num1 * num2) / hcf;
+
+    // Printing the results
+    printf("LCM of %d and %d is %d\n", num1, num2, lcm);
+    printf("HCF of %d and %d is %d\n", num1, num2, hcf);
+
+    return 0;
+}
+
+
 
