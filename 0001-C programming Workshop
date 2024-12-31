@@ -611,4 +611,29 @@ int main() {
    return 0;
 }
 
+// 22. WAP in C to swap the value.
+
+#include <stdio.h>
+int main() {
+    int num1, num2;
+    // Input the first number
+    printf("Enter first number: \n");
+    scanf("%d", &num1);
+    
+    // Input the second number
+    printf("Enter second number: \n");
+    scanf("%d", &num2);
+    printf("Before swapping value, the first number is %d and another number is %d\n",num1,num2);
+    
+    // Swapping the values
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+    
+    // Output the swapped values
+    printf("After swapping, the first number is %d and another number is %d\n", num1, num2);
+    return 0;
+}
+
+
 
