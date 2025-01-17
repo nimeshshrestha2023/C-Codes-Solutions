@@ -669,5 +669,50 @@ int main(){
     return 0;
 }
 
+// 24. PREDICT THE OUTPUT
+
+Code 1:
+#include<stdio.h>
+int main(){
+int x = 25;
+int y = ++x;
+if(x==y){
+printf("Dark");
+} else{
+printf("Night");
+}
+return 0;
+}
+Output: Simple , the output is 'Dark' , how then? , her you could see in the variable 'y', 'x' is increased through pre-increment process, that
+mean the variable 'x' get increased by ++ i.e 1, and then assign the value to 'y'.
+
+Code 2:
+#include<stdio.h>
+
+int main(){
+    char a = 'B';
+    char b = 'A';
+
+    printf("%d",a+b);
+    return 0;
+}
+Output: Ahhh, here the output is 131, how ? Basically, the datatype char we have assign to variable 'a' and 'b' carries ASCII CODE, that 
+means B carries 66 and A carries 65, so 66+65 = 131 because during execution the format specifier is %d.
+
+
+Code 3:
+#include<stdio.h>
+
+int main(){
+    int f, m, a;
+
+    m = 2;
+    a = m++;
+    f = m * a;
+    printf("%d",f);
+    return 0;
+}
+Output: Here the output is '6' why? Try yourself , this is your task !
+
 
 
