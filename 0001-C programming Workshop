@@ -634,6 +634,40 @@ int main() {
     printf("After swapping, the first number is %d and another number is %d\n", num1, num2);
     return 0;
 }
+// 23. Program to choose the 'n' numbers and find the greatest and smallest number.
+#include<stdio.h>
+int main(){
+    int num[999], max , min, limit;
+    printf("How many elements? \n");
+    scanf("%d",&limit);
+    if(limit >= 999)
+    {
+        printf("Maximum limit reached !!");
+        return 0;
+    }
+    printf("Now, Enter %d number: \n",limit);
+    for(int i=0;i<limit;i++)
+    {
+        printf("Number:%d\n",i+1);
+        scanf("%d",&num[i]);
+    }
+    min = num[0];
+    max = num[0];
+    for(int i=1;i < limit;i++)
+    {
+        if(num[i] > max)
+        {
+            max = num[i];
+        }
+        if(num[i] < min)
+        {
+            min = num[i];
+        }
+    }
+    printf("The greatest number is %d\n",max);
+    printf("The smallest number is %d\n",min);
+    return 0;
+}
 
 
 
