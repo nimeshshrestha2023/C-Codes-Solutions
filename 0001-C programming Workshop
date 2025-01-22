@@ -683,7 +683,7 @@ printf("Night");
 }
 return 0;
 }
-Output: Simple , the output is 'Dark' , how then? , her you could see in the variable 'y', 'x' is increased through pre-increment process, that
+Output: Simple , the output is 'Dark' , how then? , here you could see in the variable 'y', 'x' is increased through pre-increment process, that
 mean the variable 'x' get increased by ++ i.e 1, and then assign the value to 'y'.
 
 Code 2:
@@ -713,6 +713,9 @@ int main(){
     return 0;
 }
 Output: Here the output is '6' why? Try yourself , this is your task !
+
+
+
 
 
 
