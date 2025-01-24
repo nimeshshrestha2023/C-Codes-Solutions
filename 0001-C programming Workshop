@@ -714,6 +714,29 @@ int main(){
 }
 Output: Here the output is '6' why? Try yourself , this is your task !
 
+// 25. program to input the limit of an element and find the sum of that each number.
+Code: 
+
+#include<stdio.h>
+
+int main(){
+    int num[99], limit, s=0;
+    
+    printf("How many element do you want ? \n");
+    scanf("%d",&limit);
+    
+    printf("Enter %d different number: \n",limit);
+    for(int i=1;i<=limit;i++)
+    {
+        printf("Number:%d\n",i);
+        scanf("%d",&num[i]);
+        s = s + num[i];
+        printf("\n");
+    }
+    printf("The sum of %d number is %d\n",limit,s);
+    return 0;
+}
+
 
 Content loading !!
 
