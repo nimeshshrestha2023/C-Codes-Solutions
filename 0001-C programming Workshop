@@ -737,6 +737,23 @@ int main(){
     return 0;
 }
 
+// 26.  Program to print the series, 5  10  20  35  60   ... upto 10th term
+#include<stdio.h>
+int main(){
+    int a = 5, b = 10, c;
+    printf("%d\t%d\t",a,b);
+    for(int i=3;i<=10;i++)
+    {
+        c = a + b + 5;
+        printf("%d\t",c);
+        a = b;
+        b = c;
+    }
+    return 0;
+}
+
+// 27. Program to 
+
 
 Content loading !!
 
