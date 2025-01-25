@@ -752,10 +752,102 @@ int main(){
     return 0;
 }
 
-// 27. Program to 
+// 27. Program to input the element of two matix and find the product between them
+
+Code:
+#include<stdio.h>
+int main(){
+    int a[2][2], b[2][2], i, j , k, c[2][2];
+    
+    //First matrix element
+    printf("Enter the element of Matrix 1: \n");
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            scanf("%d",&a[i][j]);
+        }
+    }
+
+    printf("Enter the elements of Matrix2: \n");
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            scanf("%d",&b[i][j]);
+        }
+    }
+    //Matrix product operation
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            c[i][j] = 0;
+            for(k=0;k<2;k++)
+            {
+                c[i][j] = c[i][j] + a[i][k] * b[k][j];
+            }
+        }
+    }
+    //Now displaying
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<2;j++)
+        {
+            printf("%d\t",c[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//28. Program to input two matrix and find the sum.
+
+Code:
+#include <stdio.h>
+
+int main() {
+    int a[2][2], b[2][2], c[2][2], i, j;
+
+    // Input elements for Matrix 1
+    printf("Enter the elements of Matrix1: \n");
+    for(i = 0; i < 2; i++) {
+        for(j = 0; j < 2; j++) {
+            scanf("%d", &a[i][j]);  // Corrected: Use &a[i][j] for scanf
+        }
+    }
+
+    // Input elements for Matrix 2
+    printf("Enter the elements of Matrix2: \n");
+    for(i = 0; i < 2; i++) {
+        for(j = 0; j < 2; j++) {
+            scanf("%d", &b[i][j]);
+        }
+    }
+
+    // Matrix addition operation
+    for(i = 0; i < 2; i++) {
+        for(j = 0; j < 2; j++) {
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+
+    // Displaying the result matrix
+    printf("The addition matrix is: \n");
+    for(i = 0; i < 2; i++) {
+        for(j = 0; j < 2; j++) {
+            printf("%d\t", c[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
 
 
-Content loading !!
+
+
+Hold on , Content loading !!
 
 
 
