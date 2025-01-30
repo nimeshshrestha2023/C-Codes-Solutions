@@ -847,10 +847,66 @@ int main() {
     return 0;
 }
 
+Function problems: 
 
 
+/* 29. Program to take two numbers and print the number from first value to second value using function */
+#include<stdio.h>
+void number(int num1, int num2)
+{
+    printf("Number from %d to %d is: \n",num1, num2);
+    for(int i=num1;i<=num2;i++)
+    {
+        printf("%d\t",i);
+    }
+}
+int main(){
+    int num1, num2;
+    printf("Enter first number: \n");
+    scanf("%d",&num1);
+    printf("Enter second number: \n");
+    scanf("%d",&num2);
+    number(num1, num2);
+    return 0;
+}
 
-Hold on , Content loading !!
+// 30. Program to input the value of radius and find the area of circle using function.
+
+Code: 
+#include<stdio.h>
+void area(float r)
+{
+    float ar = 3.14 * r * r;
+    printf("The area of a circle is %.2f",ar);
+}
+int main(){
+    float ar, r;
+    printf("Enter the value of radius: \n");
+    scanf("%f",&r);
+    area(r);
+    return 0;
+}
+
+   or, 
+     Using arguement plus with return type
+
+Code:
+#include<stdio.h>
+float area(float r)
+{
+    float ar = 3.14 * r * r;
+    return ar;
+}
+int main(){
+    float r;
+    printf("Enter the value of radius: \n");
+    scanf("%f",&r);
+    printf("The area of a circle is %.2f",area(r));
+    return 0;
+}
+
+
+Hold on , Content on progress !!
 
 
 
