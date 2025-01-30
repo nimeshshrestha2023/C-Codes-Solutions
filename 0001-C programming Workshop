@@ -905,6 +905,35 @@ int main(){
     return 0;
 }
 
+// 31. program to display the smallest number from two numbers using function.
+
+Code:
+#include<stdio.h>
+void check(int num1, int num2)
+{
+    int min;
+    if(num1 < num2)
+    {
+        min = num1;
+    }
+    else{
+        min = num2;
+    }
+    printf("The smallest number is %d",min);
+}
+int main(){
+    int num1, num2;
+    printf("Enter first number: \n");
+    scanf("%d",&num1);
+
+    printf("Enter second number: \n");
+    scanf("%d",&num2);
+
+    check(num1,num2);
+    return 0;
+}
+
+
 
 Hold on , Content on progress !!
 
