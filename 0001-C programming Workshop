@@ -933,6 +933,32 @@ int main(){
     return 0;
 }
 
+// 32. Program to input any number and find the reverse of those number using function.
+
+Code:
+#include<stdio.h>
+int number(int num)
+{
+int r, c, s=0;
+c = num;
+while(num>0)
+  {
+r = num % 10;
+s = (s*10)+r;
+num = num/10;
+  }
+return s;
+}
+int main(){
+int num;
+
+printf("Enter the number: ");
+scanf("%d",&num);
+
+printf("The reverse of %d is %d",num,number(num));
+return 0;
+}
+
 
 
 Hold on , Content on progress !!
