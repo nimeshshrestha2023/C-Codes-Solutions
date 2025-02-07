@@ -1026,6 +1026,35 @@ int main()
     return 0;
 }
 
+/* 35. Create a function that takes and array & return it's maximum value. */
+
+#include<stdio.h>
+int max_value(int num[],int limit)
+{
+    int max;
+    max = num[0];
+    for(int i=1;i<=limit;i++)
+    {
+        if(num[i] > max)
+        {
+            max = num[i];
+        }
+    }
+    return max;
+}
+int main(){
+    int num[99], limit, i;
+    printf("How many number: ?\n");
+    scanf("%d",&limit);
+    printf("Enter %d number:\n",limit);
+    for(i=0;i<limit;i++)
+    {
+        printf("Number:%d\n",i+1);
+        scanf("%d",&num[i]);
+    }
+    printf("The greatest number is %d\n", max_value(num,limit));
+    return 0;
+}
 
 
 Hold on , Content on progress !!
