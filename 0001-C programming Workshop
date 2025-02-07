@@ -959,7 +959,7 @@ printf("The reverse of %d is %d",num,number(num));
 return 0;
 }
 
-// 33. Program to input number and display it's multiplication table.
+// 33. Program to input number and display it's multiplication table using function.
 
 Code:
 #include<stdio.h>
@@ -978,6 +978,54 @@ int main(){
     }
     return 0;
 }
+
+//34. Create a function that takes an array and sort the elements in ascending order.
+
+Code:
+#include <stdio.h>
+
+void number(int num[], int limit) 
+{
+    int i, j, temp;
+    /*limit - 1 is needed because each pass places one element correctly, reducing required passes */
+    for (i = 0; i < limit - 1; i++) 
+    {
+        for (j = i + 1; j < limit; j++) 
+        {
+            if (num[i] > num[j]) 
+            {
+                temp = num[i];
+                num[i] = num[j];
+                num[j] = temp;
+            }
+        }
+    }
+    printf("=== After sorting ===\n");
+    for (i = 0; i < limit; i++) 
+    {
+        printf("%d\t", num[i]);
+    }
+    printf("\n");
+}
+
+int main() 
+{
+    int num[999], limit, i;
+    
+    printf("How many numbers?\n");
+    scanf("%d", &limit);
+
+    printf("Enter %d numbers:\n", limit);
+    for (i = 0; i < limit; i++) 
+    {
+        printf("Number %d: ", i + 1);
+        scanf("%d", &num[i]);
+    }
+    number(num, limit);
+
+    return 0;
+}
+
 
 
 Hold on , Content on progress !!
