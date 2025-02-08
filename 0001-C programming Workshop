@@ -1056,6 +1056,31 @@ int main(){
     return 0;
 }
 
+// 35. Program to input the words and check whether it is palindrome or not .
+
+Code:
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char w[20], d[20];
+
+    printf("Enter the word: \n");
+    scanf("%s", w);  
+
+    strcpy(d, w);  
+    strrev(d);       
+
+    if (strcmp(w, d) == 0)
+        printf("Palindrome\n");
+    else
+        printf("Not\n");
+
+    return 0;
+}
+
+
+
 
 Hold on , Content on progress !!
 
