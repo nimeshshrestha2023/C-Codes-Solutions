@@ -1127,6 +1127,25 @@ int main() {
     return 0;
 }
 
+//39. Program to input any two numbers and find it's sum using pointer.
+
+Code:
+
+#include<stdio.h>
+int main(){
+    
+    int num1, num2;
+    int *p = &num1, *q = &num2;
+    
+    printf("Enter two numbers: \n");
+    scanf("%d%d",&num1,&num2);
+    int sum = *p + *q;
+    
+    printf("The sum of %d and %d is %d\n",*p,*q,sum);
+    return 0;
+    
+}
+
 
 
 Hold on , Content on progress !!
