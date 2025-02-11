@@ -1146,6 +1146,40 @@ int main(){
     
 }
 
+//40. WAP to input any 5 numbers in an array and find the smallest and the biggest numbers using pointer.
+
+Code:
+#include <stdio.h>
+
+int main() {
+    int num[5], min, max;
+    int *p;  // Pointer declaration
+
+    printf("Enter 5 different numbers: \n");
+    for (int i = 0; i < 5; i++) {
+        printf("Number %d: ", i + 1);
+        scanf("%d", &num[i]);  // Store directly using array indexing
+    }
+
+    p = num;  // Point to the first element
+    min = max = *p;  // Initialize min and max with the first element
+
+    for (int i = 1; i < 5; i++) {
+        p++;  // Move pointer to the next element
+        if (*p > max) {
+            max = *p;
+        }
+        if (*p < min) {
+            min = *p;
+        }
+    }
+    printf("Smallest number: %d\n", min);
+    printf("Biggest number: %d\n", max);
+
+    return 0;
+}
+
+
 
 
 Hold on , Content on progress !!
