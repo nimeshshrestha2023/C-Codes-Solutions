@@ -1249,6 +1249,31 @@ int main(){
 //44. WAP to take an int array as argument & return the smallest value in the array.
 
 Code:
+#include<stdio.h>
+int number(int num[])
+{
+    int min,i;
+    min = num[0];
+    for(i=1;i<5;i++)
+    {
+        if(num[i] < min)
+        {
+            min = num[i];
+        }
+    }
+    return min;
+}
+int main(){
+    int num[5];
+    printf("Enter 5 different numbers: \n");
+    for(int i=0;i<5;i++)
+    {
+        printf("Number:%d\n",i+1);
+        scanf("%d",&num[i]);
+    }
+    printf("The smallest number is %d",number(num));
+    return 0;
+}
 
 
 
