@@ -1225,6 +1225,27 @@ int main(){
     return 0;
 }
 
+//43. WAP to take any one integer and find the sum upto that number using function.
+
+Code:
+#include<stdio.h>
+void sum(int num)
+{
+    int s = 0;
+    for(int i=1;i<=num;i++)
+    {
+        s = s + i;
+    }
+    printf("The sum upto %d digits is %d",num,s);
+}
+int main(){
+    int num;
+    printf("Enter the number: \n");
+    scanf("%d",&num);
+    sum(num);
+    return 0;
+}
+
 
 
 Hold on , Content on progress !!
