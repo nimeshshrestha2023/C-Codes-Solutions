@@ -1322,6 +1322,31 @@ int main(){
     printf("The factorial of %d is %d",num,fact(num));
     return 0;
 }
+//47. WAP to display the first 10 fibonacci series using recursive function.
+
+Code:
+#include <stdio.h>
+
+int fibo(int n) {
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else
+        return fibo(n - 1) + fibo(n - 2);
+}
+
+int main() {
+
+    printf("Fibonacci Series: ");
+    
+    for (int i = 0; i < 10; i++) {
+        printf("%d ", fibo(i));
+    }
+
+    printf("\n");
+    return 0;
+}
 Hold on , Content on progress !!
 
 
