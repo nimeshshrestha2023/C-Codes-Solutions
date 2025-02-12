@@ -1201,6 +1201,29 @@ int main(){
     return 0;
 }
 
+//42. WAP to input any two numbers and find the smallest number between them using 4th type of function.
+
+Code:
+#include<stdio.h>
+int small(int a, int b)
+{
+    int min;
+    if(a < b)
+    {
+        min = a;
+    }
+    else{
+        min = b;
+    }
+    return min;
+}
+int main(){
+    int a, b;
+    printf("Enter two numbers: \n");
+    scanf("%d%d",&a,&b);
+    printf("The smallest number is %d",small(a,b));
+    return 0;
+}
 
 
 
