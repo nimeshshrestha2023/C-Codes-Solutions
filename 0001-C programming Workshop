@@ -1246,7 +1246,35 @@ int main(){
     return 0;
 }
 
+//44. WAP to take an int array as argument & return the smallest value in the array.
 
+Code:
+
+
+
+//45. WAP to take any integers and find the sum of it's digits using function.
+
+COde:
+#include<stdio.h>
+void sum(int num)
+{
+    int r , c , s=0;
+    c = num;
+    while(num>0)
+    {
+        r = num%10;
+        s = s + r;
+        num = num/10;
+    }
+    printf("The sum of each digits of %d is %d",c,s);
+}
+int main(){
+    int num;
+    printf("Enter the integer: \n");
+    scanf("%d",&num);
+    sum(num);
+    return 0;
+}
 
 Hold on , Content on progress !!
 
