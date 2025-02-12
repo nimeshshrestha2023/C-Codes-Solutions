@@ -1179,6 +1179,28 @@ int main() {
     return 0;
 }
 
+//41. WAP to input any number & check whether the number is odd or even taking void check(n) function type.
+
+Code:
+#include<stdio.h>
+void check(int n)
+{
+    if(n % 2 ==0)
+    {
+        printf("The number %d is even",n);
+    }
+    else{
+        printf("The number %d is odd",n);
+    }
+}
+int main(){
+    int n;
+    printf("Enter the number: \n");
+    scanf("%d",&n);
+    check(n);
+    return 0;
+}
+
 
 
 
