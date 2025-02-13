@@ -1399,6 +1399,38 @@ int main() {
     
     return 0;
 }
+
+//50. WAP to display the following series.
+
+a. 
+
+  P
+ EPA
+NEPAL
+
+Code:
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char w[] = "NEPAL";
+    int length = strlen(w);
+    
+    for (int i = length - 3; i < length; i++) {
+        // Print spaces
+        for (int j = 0; j < length - i - 1; j++) {
+            printf(" ");
+        }
+        // Print characters from index (length - i - 1) to i
+        for (int k = length - i - 1; k <= i; k++) {
+            printf("%c", w[k]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
+
     
 
 
