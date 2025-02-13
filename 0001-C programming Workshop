@@ -1455,6 +1455,40 @@ int main(){
     return 0;
 }
 
+C.
+KATHMANDU
+ KATHMAN
+  KATHM
+   KAT
+    K
+
+Code:
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char w[] = "KATHMANDU";
+    int length = strlen(w);
+
+    for (int i = 0; i < 5; i++) {
+        // Print spaces
+        for (int j = 0; j < i; j++) {
+            printf(" ");
+        }
+
+        // Print characters
+        for (int k = 0; k < length - (2 * i); k++) {
+            printf("%c", w[k]);
+        }
+
+        printf("\n");
+    }
+
+    return 0;
+}
+
+
     
 
 
