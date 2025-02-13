@@ -1373,6 +1373,35 @@ int main(){
     return 0;
     
 }
+
+//49. WAP to input any word & check whether the word is palindrome or not.
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char word[50], reversed[50];
+    
+    // Input the word
+    printf("Enter a word: ");
+    scanf("%s", word);
+    
+    // Copy and reverse the word
+    strcpy(reversed, word);
+    strrev(reversed);
+    
+    // Check if palindrome
+    if(strcmp(word, reversed) == 0) {
+        printf("%s is a palindrome.\n", word);
+    } else {
+        printf("%s is not a palindrome.\n", word);
+    }
+    
+    return 0;
+}
+    
+
+
 Hold on , Content on progress !!
 
 
