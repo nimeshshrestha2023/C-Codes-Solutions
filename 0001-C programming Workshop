@@ -1488,6 +1488,42 @@ int main() {
     return 0;
 }
 
+//51. WAP to input 5 different countries name and sort them in alphabetical order.
+
+Code:
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char countries[5][50];
+    char temp[50];
+    int i, j;
+
+    printf("Enter names of 5 different countries:\n");
+    for(i = 0; i < 5; i++) {
+        printf("Country %d: ", i + 1);
+        scanf("%s", countries[i]);
+    }
+
+    for(i = 0; i < 4; i++) {
+        for(j = i + 1; j < 5; j++) {
+            if(strcmp(countries[i], countries[j]) > 0) {
+                strcpy(temp, countries[i]);
+                strcpy(countries[i], countries[j]);
+                strcpy(countries[j], temp);
+            }
+        }
+    }
+  
+    printf("\nCountries in Ascending Order:\n");
+    for(i = 0; i < 5; i++) {
+        printf("%s\t", countries[i]);
+    }
+
+    return 0;
+}
+
+
 
     
 
