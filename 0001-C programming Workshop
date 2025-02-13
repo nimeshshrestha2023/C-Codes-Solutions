@@ -1347,6 +1347,32 @@ int main() {
     printf("\n");
     return 0;
 }
+
+//48. WAP to input any three words and find the shortest words.
+
+Code:
+
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    char w1[20], w2[20], w3[20];
+    
+    printf("Enter 3 different words: \n");
+    scanf("%s%s%s",w1,w2,w3);
+    
+    char shortest[20];
+    strcpy(shortest,w1);
+    if(strlen(w2) < strlen(shortest)){
+        strcpy(shortest, w2);
+    }
+    if(strlen(w3) < strlen(shortest)){
+        strcpy(shortest, w3);
+    }
+    printf("The smallest word is %s",shortest);
+    return 0;
+    
+}
 Hold on , Content on progress !!
 
 
