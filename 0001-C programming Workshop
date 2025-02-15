@@ -1523,6 +1523,80 @@ int main() {
     return 0;
 }
 
+//52. WAP to input the details of 'n' books (book's price , book's page, book's author) using structure and display it arranging  on the basis of price.
+
+Code:
+#include<stdio.h>
+#include<string.h>
+struct book_detail{
+    int book_price, book_page;
+    char book_author[20], book_nam[20];
+}n[999];
+int main(){
+    
+    int tbook_price, tbook_page;
+    char tbook_author[20], tbook_nam[20];
+    int limit;
+
+    printf("How many book detail do you want to store ? \n");
+    scanf("%d",&limit);
+    printf("Enter %d book's name, author, price and page \n",limit);
+    for(int i=0;i<limit;i++)
+    {
+        printf("Book no:%d\n",i+1);
+        printf("Book's name: ");
+        scanf("%s",&n[i].book_nam);
+        printf("Book's author: ");
+        scanf("%s",&n[i].book_author);
+        printf("Book's price: ");
+        scanf("%d",&n[i].book_price);
+        printf("Book's page: ");
+        scanf("%d",&n[i].book_page);
+        printf("\n");
+
+    }
+    for(int i=0;i<limit;i++)
+    {
+        for(int j=i+1;j<limit;j++)
+        {
+            if(n[i].book_price > n[j].book_price)
+            {
+                //swapping price value
+                tbook_price = n[i].book_price;
+                n[i].book_price = n[j].book_price;
+                n[j].book_price = tbook_price;
+
+                //swapping page value
+                tbook_page = n[i].book_page;
+                n[i].book_page = n[j].book_page;
+                n[j].book_page = tbook_page;
+
+                //swapping author value
+                strcpy(tbook_author, n[i].book_author);
+                strcpy(n[i].book_author, n[j].book_author);
+                strcpy(n[j].book_author, tbook_author);
+
+                //swapping name value
+                strcpy(tbook_nam, n[i].book_nam);
+                strcpy(n[i].book_nam,n[j].book_nam);
+                strcpy(n[j].book_nam,tbook_nam);
+            }
+        }
+
+    }
+    printf("===After swapping value ===\n");
+    for(int i=0;i<limit;i++)
+    {
+        printf("Book no:%d\n",i+1);
+        printf("Book's name: %s\n",n[i].book_nam);
+        printf("Book's author: %s\n",n[i].book_author);
+        printf("Book's price: %d\n",n[i].book_price);
+        printf("Book's page: %d\n",n[i].book_page);
+        printf("\n");
+    }
+    return 0;
+    
+}
 
 
     
