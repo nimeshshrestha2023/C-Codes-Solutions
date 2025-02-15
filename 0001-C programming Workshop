@@ -1598,6 +1598,49 @@ int main(){
     
 }
 
+//53. WAP to input the name, faculty and age of n number of students using structure using DMA techniques.
+
+Code:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct Student {
+    char name[50];
+    char faculty[50];
+    int age;
+};
+
+int main() {
+    int limit;
+    printf("Enter the number of students: ");
+    scanf("%d", &n);
+    struct Student *students = (struct Student *)malloc(n * sizeof(struct Student));
+
+    for (int i = 0; i < limit; i++) {
+        printf("\nEnter details for student %d:\n", i + 1);
+        printf("Name: ");
+        scanf(" %s", students[i].name);  
+        printf("Faculty: ");
+        scanf(" %s", students[i].faculty);
+        printf("Age: ");
+        scanf("%d", &students[i].age);
+        printf("\n");
+    }
+    printf("Student Details:\n");
+    for (int i = 0; i < limit; i++) {
+        printf("\nStudent %d:\n", i + 1);
+        printf("Name: %s\n", students[i].name);
+        printf("Faculty: %s\n", students[i].faculty);
+        printf("Age: %d\n", students[i].age);
+    }
+
+    free(students);
+
+    return 0;
+}
+
+
 
     
 
