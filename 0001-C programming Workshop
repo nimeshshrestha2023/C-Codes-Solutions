@@ -1813,6 +1813,23 @@ int main(){
 Output => X=69  Y=70  => Reason is due to post-decrement, y = x-- means y is assigned the value of x before decrement so y=70 initially 
 After that x is decremented by 1, making x = 69.
 
+ii. #include <stdio.h>
+
+int main() {
+   int num = 5;
+   if((num & 1) ==0)
+   {
+       printf("Even");
+   }
+   else{
+       printf("Odd");
+   }
+
+    return 0;
+}
+
+Output : Odd
+
 
   
 
