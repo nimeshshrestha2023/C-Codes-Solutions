@@ -1831,6 +1831,60 @@ int main() {
 Output : Odd
 
 
+/* 59. Create a menu driven program that store and display the name, age and roll of a student
+and follows the following cases:
+1. Add records
+2. Display records
+*/
+
+#include <stdio.h>
+
+#define MAX 100
+
+int main() {
+    char name[50];
+    int age, roll, choice;
+    FILE *fptr;
+    
+    // Store initial student records
+    fptr = fopen("students.txt", "w");
+    int num;
+    printf("Enter number of students to store: ");
+    scanf("%d", &num);
+    
+    for (int i = 0; i < num; i++) {
+        printf("Enter Name, Age, Roll: ");
+        scanf("%s %d %d", name, &age, &roll);
+        fprintf(fptr, "%s %d %d\n", name, age, roll);
+    }
+    fclose(fptr);
+    
+    while (1) {
+        printf("\n1. Add Student\n2. Display Students\n3. Exit\nChoice: ");
+        scanf("%d", &choice);
+        
+        if (choice == 1) {
+            fptr = fopen("students.txt", "a");
+            printf("Enter Name, Age, Roll: ");
+            scanf("%s %d %d", name, &age, &roll);
+            fprintf(fptr, "%s %d %d\n", name, age, roll);
+            fclose(fptr);
+        } else if (choice == 2) {
+            fptr = fopen("students.txt", "r");
+            printf("\nStudent Records:\n");
+            while (fscanf(fptr, "%s %d %d", name, &age, &roll) != EOF) {
+                printf("%s %d %d\n", name, age, roll);
+            }
+            fclose(fptr);
+        } else {
+            break;
+        }
+    }
+    return 0;
+}
+
+
+
   
 
 
