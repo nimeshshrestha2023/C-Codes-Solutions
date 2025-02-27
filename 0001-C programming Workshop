@@ -1883,7 +1883,27 @@ int main() {
     return 0;
 }
 
+// 60. WAP to store the message "Coding Jindageeee" in the file named "code_now.txt" using fputs() and fprintf().
 
+//Using fprintf()
+Code:
+#include<stdio.h>
+int main(){
+
+FILE *fptr;
+fptr = fopen("code_now.txt", "w");
+
+if(fptr == NULL){
+printf("FILE NOT OPENED !!!");
+return 0;
+}
+else{
+printf("FILE OPENED SUCCESSFULLY !!");
+}
+fprintf(fptr,"Coding Jindageeee");
+fclose(fptr);
+return 0;
+}
 
   
 
