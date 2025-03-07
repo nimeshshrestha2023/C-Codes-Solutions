@@ -1641,6 +1641,8 @@ int main() {
 }
 
 
+
+
 /* 54.Create an array of structure to store name, faculty and age of 5 students and print only those who study in BIM*/
 #include<stdio.h>
 #include<string.h>
@@ -1903,6 +1905,29 @@ printf("FILE OPENED SUCCESSFULLY !!");
 fprintf(fptr,"Coding Jindageeee");
 fclose(fptr);
 return 0;
+}
+
+//61. WAP to assign the value of roll and name of a known students and display using structure with function in advance.
+
+Code:
+
+#include<stdio.h>
+struct student{
+    int roll;
+    char nam[20];
+};
+void display(struct student);
+int main(){
+    struct student std = {15,"NIMESH"};
+    display(std);
+    return 0;
+    
+}
+void display(struct student std)
+{
+    printf("Stored Data are:\n");
+    printf("ROll:%d\nName:%s\n",std.roll,std.nam);
+    
 }
 
   
