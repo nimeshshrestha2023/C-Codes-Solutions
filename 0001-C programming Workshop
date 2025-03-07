@@ -2018,6 +2018,42 @@ int main() {
     return 0;
 }
 
+64. WAP to input 'n' student's name, roll and age display using structure using arrow operator.
+
+Code:
+#include<stdio.h>
+struct student{
+    int roll, age;
+    char nam[20];
+}n[99];
+int main(){
+    struct student *ptr;
+    int limit;
+    printf("How many student's detail?\n");
+    scanf("%d",&limit);
+    for(int i=0;i<limit;i++)
+    {
+        printf("Student no:%d\n",i+1);
+        printf("Student's name: ");
+        scanf("%s",&n[i].nam);
+        printf("Student's roll: ");
+        scanf("%d",&n[i].roll);
+        printf("Student's age: ");
+        scanf("%d",&n[i].age);
+        printf("\n");
+    }
+    printf("Displaying...\n");
+    for(int i=0;i<limit;i++)
+    {
+        ptr = &n[i];
+        printf("Student no:%d\n",i+1);
+        printf("Student's name:%s\n",ptr -> nam);
+        printf("Student's roll:%d\n",ptr -> roll);
+        printf("Student's age:%d\n",ptr -> age);
+    }
+    return 0;
+}
+
 
   
 
