@@ -2177,6 +2177,42 @@ int main(){
     return 0;
 }
 
+
+//69. WAP to input 2x3 matrix elements and display the transpose .
+Code:
+#include<stdio.h>
+int main(){
+    int num[2][3], i, j;
+    printf("Enter the elements of 2x3 matrix : \n");
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("Enter elements[%d][%d]: ",i+1,j+1);
+            scanf("%d",&num[i][j]);
+        }
+    }
+    printf("Entered matrix elements: \n");
+    for(i=0;i<2;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            printf("%d\t",num[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Transposed Matrix: \n");
+    for(j=0;j<3;j++)
+    {
+        for(i=0;i<2;i++)
+        {
+            printf("%d\t",num[i][j]);
+        }
+        printf("\n");
+        
+    }
+}
+
   
 
 
