@@ -2143,6 +2143,39 @@ int main(){
    return 0;
 }
 
+//68. WAP to input 'n' numbers and sort them and display the second largest number.
+
+Code:
+#include<stdio.h>
+struct number{
+    int num;
+}n[999];
+int main(){
+    
+    int i, j,limit;
+    printf("How many number: \n");
+    scanf("%d",&limit);
+    printf("Enter %d number: \n",limit);
+    for(i=0;i<limit;i++)
+    {
+        printf("Number:%d\n",i+1);
+        scanf("%d",&n[i].num);
+    }
+    for(i=0;i<limit;i++)
+    {
+        for(j=i+1;j<limit;j++)
+        {
+            if(n[i].num > n[j].num)
+            {
+                int temp = n[i].num;
+                n[i].num = n[j].num;
+                n[j].num = temp;
+            }
+        }
+    }
+    printf("The second largest number is %d",n[limit-2].num);
+    return 0;
+}
 
   
 
