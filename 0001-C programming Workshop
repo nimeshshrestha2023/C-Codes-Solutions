@@ -2054,6 +2054,40 @@ int main(){
     return 0;
 }
 
+//65. WAP to input 'n' numbers and sort them and find the second largest number.
+
+Code:
+#include<stdio.h>
+int main(){
+    int num[999];
+    int limit;
+    printf("Enter limit: \n");
+    scanf("%d",&limit);
+    printf("Enter %d numbers: \n",limit);
+    for(int i=1;i<=limit;i++)
+    {
+        printf("Number:%d\n",i);
+        scanf("%d",&num[i]);
+    }
+    for(int i=1;i<=limit;i++)
+    {
+        for(int j=i+1;j<=limit;j++)
+        {
+            if(num[i] > num[j])
+            {
+                int temp = num[i];
+                num[i] = num[j];
+                num[j] = temp;
+                
+            }
+        }
+    }
+    printf("After printing...\n");
+    printf("The second largest value is \n");
+    printf("%d", num[limit-1]);
+    return 0;
+}
+
 
   
 
