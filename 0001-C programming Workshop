@@ -2289,6 +2289,40 @@ int main(){
     swap(num,limit);
     return 0;
 }
+//72.WAP to input 'n' numbers in an array and return the sum of odd and even numbers separately using function.
+
+#include<stdio.h>
+void test(int num[], int limit)
+{
+    int even_sum = 0, odd_sum = 0,i;
+    for(i=0;i<limit;i++)
+    {
+        if(num[i] % 2==0)
+        {
+            even_sum += num[i];
+        }
+        else
+        odd_sum += num[i];
+    }
+    printf("Sum of even number is %d\n",even_sum);
+    printf("Sum of odd numbers is %d\n",odd_sum);
+    
+}
+int main(){
+    
+    int limit, num[99],i;
+    printf("How many elements?\n");
+    scanf("%d",&limit);
+    printf("Enter %d elements?\n",limit);
+    for(i=0;i<limit;i++)
+    {
+        printf("Number:%d\n",i+1);
+        scanf("%d",&num[i]);
+    }
+    test(num,limit);
+    return 0;
+    
+}
 
   
 
