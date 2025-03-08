@@ -2432,6 +2432,40 @@ int main(){
 }
 
 
+
+/* Data file contain certain employee's name, post and salary
+WAP to input the name and search the recording matching that name*/
+
+#include<stdio.h>
+#include<string.h>
+int main(){
+
+    FILE *fptr;
+    fptr = fopen("emp.txt","r");
+    int x =0;
+    int sal;
+    char nam[20], post[10];
+    char  nam1[20];
+    printf("Enter the name to search: \n");
+    scanf("%s",&nam1);
+    while(fscanf(fptr,"%s\t%s\t%d\n",&nam,&post,&sal)!=EOF)
+    {
+        if(strcmp(nam,nam1)==0)
+        {
+            printf("%s\t%s\t%d\n",nam,post,sal);
+            x = 1;
+        }
+    }
+    fclose(fptr);
+    if(x==0)
+    {
+        printf("Record not found");
+    }
+    return 0;
+
+}
+
+
 Hold on , Content on progress !!
 
 
