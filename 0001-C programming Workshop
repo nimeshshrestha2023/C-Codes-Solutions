@@ -2324,6 +2324,40 @@ int main(){
     
 }
 
+/*WAP to input 3 student's name , age and faculty and display the data of only BIM graduates*/
+#include<stdio.h>
+#include<string.h>
+struct student{
+    int age;
+    char nam[20], fac[10];
+}n[3];
+int main(){
+    int i;
+    printf("Enter 5 different student's name, age and faculty: \n");
+    for(i=0;i<3;i++)
+    {
+        printf("Student no:%d\n",i+1);
+        printf("Student's name: ");
+         fgets(n[i].nam,sizeof(n[i].nam),stdin);
+        printf("Student's age: ");
+        scanf("%d",&n[i].age);
+        printf("Student's faculty: ");
+        scanf("%s",&n[i].fac);
+        printf("\n");
+    }
+    printf("Data of only BIM Graduates ...\n");
+    for(i=0;i<3;i++)
+    {
+        if(strcmp(n[i].fac,"BIM")==0){
+            printf("Student no:%d\n",i+1);
+            printf("Student's name:%s\n",n[i].nam);
+            printf("Student's age:%d\n",n[i].age);
+            printf("Student's faculty:%s\n",n[i].fac);
+        }
+    }
+    return 0;
+}
+
   
 
 
