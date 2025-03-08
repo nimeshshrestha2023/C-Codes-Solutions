@@ -2358,6 +2358,41 @@ int main(){
     return 0;
 }
 
+
+/* Program to input 3 student's name, age and faculty and display the data of those 
+who name starts with 'A' or 'a' */
+#include<stdio.h>
+#include<string.h>
+struct student{
+    int age;
+    char nam[20], fac[10];
+}n[3];
+int main(){
+    int i;
+    printf("Enter 5 different student's name, age and faculty: \n");
+    for(i=0;i<3;i++)
+    {
+        printf("Student no:%d\n",i+1);
+        printf("Student's name: ");
+        fgets(n[i].nam,sizeof(n[i].nam),stdin); //Can use scanf() or gets()
+        printf("Student's age: ");
+        scanf("%d",&n[i].age);
+        printf("Student's faculty: ");
+        scanf("%s",&n[i].fac);
+        printf("\n");
+    }
+    printf("Data of only name starting with A\n");
+    for(i=0;i<3;i++)
+    {
+        if((n[i].nam[0]=='A') || (n[i].nam[0]=='a')){
+            printf("Student no:%d\n",i+1);
+            printf("Student's name:%s\n",n[i].nam);
+            printf("Student's age:%d\n",n[i].age);
+            printf("Student's faculty:%s\n",n[i].fac);
+        }
+    }
+    return 0;
+}
   
 
 
