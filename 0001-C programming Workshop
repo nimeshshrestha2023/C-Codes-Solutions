@@ -2249,6 +2249,47 @@ int main(){
     
 }
 
+// 71.Program to input 'n' numbers in an array and return the value while sorting 
+
+
+#include<stdio.h>
+void swap(int num[],int  limit)
+{
+    int i, j,temp;
+    for(i=0;i<limit;i++)
+    {
+        for(j=i+1;j<limit;j++)
+        {
+            if(num[i] > num[j]){
+            temp = num[i];
+            num[i] = num[j];
+            num[j] =temp;
+            }
+        }
+    }
+    printf("After swapping...\n");
+    for(i=0;i<limit;i++)
+    {
+        
+        
+        printf("%d\t",num[i]);
+        
+    }
+}
+int main(){
+    int num[99], limit,i,j;
+    printf("How many eleemnts?\n");
+    scanf("%d",&limit);
+    printf("Enter %d numbers: \n",limit);
+    for(i=0;i<limit;i++)
+    {
+        printf("Numbers:%d\n",i+1);
+        scanf("%d",&num[i]);
+    }
+    swap(num,limit);
+    return 0;
+}
+
   
 
 
