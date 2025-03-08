@@ -2213,6 +2213,42 @@ int main(){
     }
 }
 
+//70. WAP to input 'n' numbers in an array and return the smallest numbers.
+
+Code:
+
+#include<stdio.h>
+int test(int num[], int limit)
+{
+    
+    int min = num[0];
+    for(int i=0;i<limit;i++)
+    {
+        if(num[i] < min)
+        {
+            min = num[i];
+        }
+    }
+    return min;
+}
+int main(){
+    
+    int num[99], limit,min=0;
+    printf("How many number?\n");
+    scanf("%d",&limit);
+    printf("Enter %d numbers: \n",limit);
+    for(int i=0;i<limit;i++)
+    {
+        printf("Number:%d\n",i+1);
+        scanf("%d",&num[i]);
+    }
+    
+    printf("The smallest number is %d\n",test(num,limit));
+    
+    return 0;
+    
+}
+
   
 
 
