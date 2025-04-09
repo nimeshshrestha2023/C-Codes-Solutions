@@ -2521,6 +2521,43 @@ int main(){
    return 0;
 }
 
+// Create a structure Mobile with it's data members name and price . WAP to input the name and price of 'n' phones and display the name of 
+phone having price more than 10000.
+
+Code:
+#include<stdio.h>
+struct mobile{
+    int price;
+    char nam[20];
+}n[99];
+int main(){
+    int limit, price, i;
+    char nam[20];
+    printf("How many mobile details ?\n");
+    scanf("%d",&limit);
+    printf("Enter %d mobile's name and price: \n",limit);
+    for(i=0;i<limit;i++)
+    {
+        printf("Mobile no:%d\n",i+1);
+        printf("Mobile's name: ");
+        scanf("%s",n[i].nam);
+        printf("Mobile's price: ");
+        scanf("%d",&n[i].price);
+        printf("\n");
+    }
+    printf("Name of mobile phone having price more than 10000\n");
+    for(i=0;i<limit;i++)
+    {
+        if(n[i].price > 10000)
+        {
+            printf("Mobile no:%d\n",i+1);
+            printf("Mobile name:%s\n",n[i].nam);
+            printf("\n");
+        }
+    }
+    return 0;
+}
+
 Hold on , Content on progress !!
 
 
