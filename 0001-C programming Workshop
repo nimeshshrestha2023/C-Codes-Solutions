@@ -2464,6 +2464,62 @@ int main(){
 
 }
 
+// WAP to input three words and find the longest words.
+Code:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char w1[20], w2[20], w3[20];
+    char longest[20];
+    printf("Enter three words: \n");
+    scanf("%s %s %s",w1,w2,w3);
+    if(strlen(w1)> strlen(w2) && strlen(w1) > strlen(w3))
+    {
+        strcpy(longest, w1);
+
+    }
+    else if(strlen(w2)>strlen(w3) && strlen(w2) > strlen(w1))
+    {
+        strcpy(longest, w2);
+    }
+    else
+    strcpy(longest, w3);
+    
+    printf("The longest word is %s",longest);
+return 0;
+}
+
+Alternative:
+
+Code:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    
+    char w1[20], w2[20], w3[20];
+    int longest;
+    printf("Enter three words: \n");
+    scanf("%s%s%s",w1,w2,w3);
+    
+    int x = strlen(w1);
+    int y = strlen(w2);
+    int z = strlen(w3);
+    
+    if(x > y && x > z)
+    {
+        longest  = x;
+        printf("The longest word with length %d is %s\n",longest, w1);
+    }
+    else if(y > x && y > z)
+    {
+        longest = y;
+        printf("The longest word with length %d is %s\n",longest, w2);
+    }
+    else
+    longest = z;
+    printf("The longest word with length %d is %s\n",longest, w3);
+   return 0;
+}
 
 Hold on , Content on progress !!
 
