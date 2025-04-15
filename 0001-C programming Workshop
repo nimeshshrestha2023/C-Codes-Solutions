@@ -2563,6 +2563,7 @@ int main(){
 using both 'for' and 'while' looping .
 
 Code:
+Using for() loop
 #include<stdio.h>
 int main(){
 int num, limit, sum = 0;
@@ -2576,7 +2577,8 @@ printf("Result:%d\n",sum);
 return 0;
 }
 
-Using while loop
+Using while loop()
+
 #include<stdio.h>
 int main(){
 int num, limit, i=0, sum=0;
@@ -2589,6 +2591,42 @@ i++;
 }
 printf("Result:%d\n",sum);
 return 0;
+}
+
+// WAP to input a number z, for example user should input a number i.e 3 then the process should go like 1^2 + 2^2 + 3^2 i.e 14 .
+
+Code:
+#include<stdio.h>
+int main(){
+    int num, square, sum= 0;
+    printf("Enter the number: \n");
+    scanf("%d",&num);
+    for(int i=1;i<=num;i++)
+    {
+        square = i *i;
+        printf("%d^2 = %d\n",i,square);
+        sum = sum + square;
+    }
+    printf("Result:%d\n",sum);
+    return 0;
+}
+
+Using while loop()
+
+#include<stdio.h>
+int main(){
+    int num, square, sum= 0,i=1;
+    printf("Enter the number: \n");
+    scanf("%d",&num);
+    while(i<=num)
+    {
+        square = i*i;
+        printf("%d^2 = %d\n",i,square);
+        sum = sum + square;
+        i++;
+    }
+    printf("Result:%d\n",sum);
+    return 0;
 }
 Hold on , Content on progress !!
 
