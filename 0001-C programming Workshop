@@ -2628,6 +2628,102 @@ int main(){
     printf("Result:%d\n",sum);
     return 0;
 }
+
+/*WAP to input ‘n’ number of student’s name and roll and display the details according to the order of name and 
+display such details in the file named “student.dat” with function too */
+
+Code:
+
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+
+// Structure definition
+struct students {
+    int roll;
+    char nam[20];
+};
+
+// Function prototype
+void save(struct students n[ ], int limit);
+
+// Function to sort, display, and call save
+void student(struct students n[ ], int limit) {
+    int i, j, troll;
+    char tnam[20];
+
+    // Sorting names alphabetically
+    for (i = 0; i < limit; i++) {
+        for (j = i + 1; j < limit; j++) {
+            if (strcmp(n[i].nam, n[j].nam) > 0) {
+                // Swap names
+                strcpy(tnam, n[i].nam);
+                strcpy(n[i].nam, n[j].nam);
+                strcpy(n[j].nam, tnam);
+                // Swap rolls
+                troll = n[i].roll;
+                n[i].roll = n[j].roll;
+                n[j].roll = troll;
+            }
+        }
+    }
+
+    // Display
+    printf("\nDisplaying the details:\n");
+    for (i = 0; i < limit; i++) {
+        printf("Student no: %d\n", i + 1);
+        printf("Student's name: %s\n", n[i].nam);
+        printf("Student's roll: %d\n\n", n[i].roll);
+    }
+
+    // Save to file
+    save(n, limit);
+}
+
+// Function to save details to a file
+void save(struct students n[ ], int limit) {
+    FILE *fptr = fopen("student.dat", "w");
+    if (fptr == NULL) {
+        printf("Error opening file.");
+        return;
+    }
+
+    fprintf(fptr, "Stored contents...\n");
+    for (int i = 0; i < limit; i++) {
+        fprintf(fptr, "Name: %s\tRoll: %d\n", n[i].nam, n[i].roll);
+    }
+
+    fclose(fptr);
+    printf("Details saved to 'student.dat'\n");
+}
+
+// Main function
+int main() {
+    clrscr();
+
+    struct students n[99];
+    int limit;
+
+    printf("How many students' details? ");
+    scanf("%d", &limit);
+    fflush(stdin);  // clear input buffer in Turbo C++
+
+    printf("Enter %d student's name and roll:\n", limit);
+    for (int i = 0; i < limit; i++) {
+        printf("\nStudent no: %d\n", i + 1);
+        printf("Student's name: ");
+        gets(n[i].nam); 
+        printf("Student's roll: ");
+        scanf("%d", &n[i].roll);
+        fflush(stdin);  // clear input buffer 
+    }
+
+    student(n, limit);
+
+    getch();
+    return 0;
+}
+
 Hold on , Content on progress !!
 
 
