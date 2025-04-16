@@ -2724,6 +2724,36 @@ int main() {
     return 0;
 }
 
+// WAP to input the digits and find and display the sum of each digits of that numbers until the user is satisfied.
+
+Code:
+#include<stdio.h>
+int main(){
+
+    int num, r, c ,s, choice;
+    top:
+    printf("Enter the number: \n");
+    scanf("%d",&num);
+
+    c = num;
+    s = 0;
+    while(num > 0)
+    {
+        r = num % 10;
+        s = s + r;
+        num = num/10;
+    }
+    printf("The sum of each digits is %d\n",s);
+    printf("Wanna continue more ? press 1 to continue press 0 to exit\n");
+    scanf("%d %c",&choice);
+    if(choice == 1)
+    
+    goto top;  
+
+    return 0;
+}
+
+
 Hold on , Content on progress !!
 
 
