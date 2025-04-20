@@ -2753,6 +2753,117 @@ int main(){
     return 0;
 }
 
+// Write a function that accepts a string and returns the length of the string without using the strlen() function.
+
+Code:
+#include<stdio.h>
+void string(char word[20])
+{
+    int i=0;
+    int len = 0;
+    while(word[i] !='\0')
+    {
+        len++;
+        i++;
+        
+    }
+    printf("The length of %s is %d\n",word,len);
+    
+}
+int main(){
+    char word[20];
+    printf("Enter the words: \n");
+    scanf("%s",word);
+    string(word);
+    return 0;
+}
+
+Or,
+
+#include<stdio.h>
+void string(char word[20])
+{
+    int len = 0;
+    for(int i=0;word[i] !='\0';i++)
+    {
+        len++;
+    }
+    printf("The length of %s is %d\n",word,len);
+    
+}
+int main(){
+    
+    char word[20];
+    printf("Enter the string: \n");
+    scanf("%s",word);
+    string(word);
+    return 0;
+}
+
+// Create a structure "Student" , with data members name , roll and marks in IT , Math and BS and store the details in the 
+file "student.txt" ,also increase the marks by 15% in each subject using function.
+Code:
+#include<stdio.h>
+struct student {
+    int roll;
+    char nam[20];
+    int it, math, bs;
+    int tot;
+};
+void fun(struct student n[], int limit)
+{
+    int i;
+    FILE *fptr =fopen("student.txt","w");
+    if(fptr == NULL)
+    {
+        printf("Could not open file\n");
+        return;
+    }
+    for(i=0;i<limit;i++)
+    {
+        float newit = n[i].it + 0.15 * n[i].it;
+        float newmath = n[i].math + 0.15 * n[i].math;
+        float newbs = n[i].bs + 0.15 * n[i].bs;
+        printf("Student's name:%s\n",n[i].nam);
+        printf("Student's roll number:%d\n",n[i].roll);
+        printf("Student's IT marks after increment:%f\n",newit);
+        printf("Student's math mark after increment:%f\n",newmath);
+        printf("Student's bs marks after increment:%f\n",newbs);
+        printf("Student's total marks after increment:%f\n",n[i].tot);
+        fprintf(fptr,"%s\t%d\t%d\t%d\t%d\n",n[i].nam,n[i].roll, newit,newmath,newbs);
+
+    } 
+    fclose(fptr);
+
+
+}
+int main()
+{
+    struct student n[99];
+    int limit;
+    printf("How many student's data you want to enter?\n");
+    scanf("%d", &limit);
+    printf("Enter %d studnet's name , roll, it, math, bs\n", limit);
+    for(int i=0;i<limit;i++)
+    {
+        printf("Student's name: ");
+        scanf("%s",n[i].nam);
+        printf("Student's roll: ");
+        scanf("%d",&n[i].roll);
+        printf("Marks in IT, Math, BS: ");
+        scanf("%d %d %d",&n[i].it,&n[i].math, &n[i].bs);
+        printf("\n");
+
+    }
+    fun(n,limit);
+    return 0;
+
+}
+
+
+
+
+
 
 Hold on , Content on progress !!
 
