@@ -2860,6 +2860,36 @@ int main()
 
 }
 
+/* Create a typedef for a structure Book with fields title, author, and price. Write a program to input and display the details of 3 books.*/
+#include<stdio.h>
+typedef struct{
+    int price;
+    char title[20];
+    char author[20];
+}Book;
+int main(){
+    Book n[3];
+    printf("Enter 3 different book's title, author and price: \n ");
+    for(int i=0;i<3;i++)
+    {
+        printf("Book's name: ");
+        scanf("%s",n[i].title);
+        printf("Book's author: ");
+        scanf("%s",n[i].author);
+        printf("Book's price: ");
+        scanf("%d",&n[i].price);
+        printf("\n");
+    }
+    printf("Details: \n");
+    for(int i=0;i<3;i++)
+    {
+        printf("Book name:%s\n",n[i].title);
+        printf("Book author:%s\n",n[i].author);
+        printf("Book price:%d\n",n[i].price);
+        printf("\n");
+    }
+}
+
 
 
 
