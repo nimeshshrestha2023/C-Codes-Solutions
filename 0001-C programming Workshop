@@ -2960,6 +2960,29 @@ int main(){
     printf("Sum of right diagonal elements:%d\n",sum_right);
 }
 
+// Program in C to find the longest words.
+Code:
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char w1[20], w2[20], w3[20];
+    printf("Enter three words: \n");
+    scanf("%s%s%s",w1,w2,w3);
+    char longest[20];
+    int x = strlen(w1);
+    int y = strlen(w2);
+    int z = strlen(w3);
+   strcpy(longest, w1);
+   if(y > strlen(longest))
+   {
+       strcpy(longest, w2);
+   }
+   if(z > strlen(longest))
+   {
+       strcpy(longest, w3);
+   }
+    printf("Longest word is %s",longest);
+}
 
 
 
