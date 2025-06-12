@@ -2890,6 +2890,32 @@ int main(){
     }
 }
 
+// Program in C to take n size 2D array and find the sum of each columns separately.
+Code:
+#include<stdio.h>
+int main(){
+    int size;
+    printf("Size of array?\n");
+    scanf("%d",&size);
+    int num[size][size];
+    printf("Enter the [%d]x[%d] matrix elements: \n",size,size);
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            scanf("%d",&num[i][j]);
+        }
+    }
+    for(int j=0;j<size;j++)
+    {
+        int sum_col = 0;
+        for(int i=0;i<size;i++)
+        {
+            sum_col += num[i][j];
+        }
+        printf("Sum of each columns %d is %d\n",j+1,sum_col);
+    }
+}
 
 
 
