@@ -2917,6 +2917,49 @@ int main(){
     }
 }
 
+// Program in C to display the sum of diagonal elements.
+Code:
+#include<stdio.h>
+int main(){
+    int size;
+    printf("Size of 2D array?\n");
+    scanf("%d",&size);
+    printf("Enter [%d]x[%d] array elements: \n",size,size);\
+    int num[size][size];
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            scanf("%d",&num[i][j]);
+        }
+    }
+    printf("---Size formation---\n");
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            printf("%d\t",num[i][j]);
+        }
+        printf("\n");
+    }
+    int sum_left = 0, sum_right = 0;
+    for(int i=0;i<size;i++)
+    {
+        for(int j=0;j<size;j++)
+        {
+            if(i==j){
+                sum_left += num[i][j];
+            }
+            if(i+j == size-1)
+            {
+                sum_right += num[i][j];
+            }
+        }
+    }
+    printf("Sum of left diagonal elements:%d\n",sum_left);
+    printf("Sum of right diagonal elements:%d\n",sum_right);
+}
+
 
 
 
